@@ -55,6 +55,27 @@ const Mutation = {
 
         return post;
     },
+
+    updatePost: async (parent, { id, data }, { mongodb }, info) => {
+        const posts = await mongodb.posts({ name: "getPosts" })
+        const post = posts.find((post) => post.id === id);
+
+        if (!post) {
+            throw new Error("Post not found");
+        }
+
+        if (typeof data.title === "string") {
+            post.title = data.title;
+        }
+
+        if (typeof data.body === "string") {
+            post.body = data.body;
+        }
+
+        await PostsModel.findOneAndUpdate({ id: id }, post, { new: true });
+        
+        return post;
+    },
 };
 
 module.exports = Mutation;
