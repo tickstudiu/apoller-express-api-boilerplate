@@ -21,6 +21,14 @@ const Query = {
         if(!post)  throw new Error("no post using id", id);
 
         return post
+    },
+
+    posts: async (parent, { id }, { mongodb }, info) => {
+        const posts = await mongodb.posts({ name: "getPostsById", id })
+
+        if(!posts)  throw new Error("no post using id", id);
+
+        return posts
     }
 };
 

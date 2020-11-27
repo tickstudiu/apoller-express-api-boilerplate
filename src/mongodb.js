@@ -1,5 +1,6 @@
 const { UsersModel } = require('./models/users.model')
 const { PostsModel } = require('./models/posts.model')
+const { CommentsModel } = require('./models/comments.model')
 
 const user = async ({ id, name }) => {
     switch (name) {
@@ -30,12 +31,27 @@ const post = async ({ id, name }) => {
     }
 }
 
-const posts = async ({ id, name }) => {
+const posts = async ({ id, author, name }) => {
     switch (name) {
         case "getPosts":
             return await PostsModel.find();
         case "getPostsById":
             return await PostsModel.find({ id: { $regex: id } }, { _id: 0 });
+        case "getPostsByAuthor":
+            return await PostsModel.find({ author: author }, { _id: 0 });
+        default:
+            return null
+    }
+}
+
+const comments = async ({id, author,  name}) => {
+    switch (name) {
+        case "getComments":
+            return await CommentsModel.find();
+        case "getCommentsByPostId":
+            return await CommentsModel.find({ postId: { $regex: id } }, { _id: 0 });
+        case "getCommentsByAuthor":
+            return await CommentsModel.find({ author: author }, { _id: 0 });
         default:
             return null
     }
@@ -45,7 +61,8 @@ const mongodb = {
     user,
     users,
     post,
-    posts
+    posts,
+    comments
 }
 
 module.exports = mongodb

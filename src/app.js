@@ -6,6 +6,8 @@ const expressPlayground = require("graphql-playground-middleware-express").defau
 const Query = require('./resolvers/Query')
 const Mutation = require('./resolvers/Mutation')
 const Post = require('./resolvers/Post')
+const Comment = require('./resolvers/Comment')
+const User = require('./resolvers/User')
 const mongoose = require("mongoose")
 const mongodb = require("./mongodb")
 
@@ -27,7 +29,9 @@ const server = new ApolloServer({
     resolvers: {
         Query,
         Mutation,
-        Post
+        Post,
+        Comment,
+        User
     },
     context: { mongodb }
 });

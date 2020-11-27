@@ -1,6 +1,7 @@
 const { uuid } = require('uuidv4');
 const { UsersModel } = require('../models/users.model')
 const { PostsModel } = require('../models/posts.model')
+const { CommentsModel } = require('../models/comments.model')
 
 const Mutation = {
     createUser: async (parent, args, { mongodb }, info) => {
@@ -34,7 +35,7 @@ const Mutation = {
         }
 
         await UsersModel.findOneAndUpdate({ id: id }, user, { new: true });
-        
+
         return user;
     },
 
@@ -73,8 +74,28 @@ const Mutation = {
         }
 
         await PostsModel.findOneAndUpdate({ id: id }, post, { new: true });
-        
+
         return post;
+    },
+
+    createComment: async (parent, args, { mongodb }, info) => {
+        const users = await mongodb.users({ name: "getUsers" })
+        const posts = await mongodb.posts({ name: "getPosts" })
+
+        const nameTaken = users.some((user) => user.id === args.data.author);
+        const postTaken = posts.some((post) => post.id === args.data.postId);
+
+        if (!nameTaken || !postTaken) {
+            throw new Error("User not found or post not found");
+        }
+
+        const comment = {
+            id: uuid(),
+            ...args.data,
+        };
+        await CommentsModel.create(comment)
+
+        return comment;
     },
 };
 
