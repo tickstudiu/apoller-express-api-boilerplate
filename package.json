@@ -33,6 +33,7 @@
     "mongoose": "^5.10.16",
     "nodemon": "^2.0.6",
     "ora": "^5.1.0",
-    "supertest": "^6.0.1"
+    "supertest": "^6.0.1",
+    "uuidv4": "^6.2.5"
   }
 }
