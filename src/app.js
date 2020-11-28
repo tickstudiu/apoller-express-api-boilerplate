@@ -40,5 +40,6 @@ server.applyMiddleware({ app });
 app.get("/playground", expressPlayground({ endpoint: "/graphql" }));
 
 module.exports = {
-    app
+    app,
+    connection
 }

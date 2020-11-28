@@ -21,6 +21,7 @@
   "homepage": "https://github.com/tickstudiu/apoller-express-api-boilerplate#readme",
   "dependencies": {
     "apollo-server-express": "^2.19.0",
+    "axios": "^0.21.0",
     "chalk": "^4.1.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
