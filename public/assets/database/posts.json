@@ -1,0 +1,10 @@
+[{
+  "_id": {
+    "$oid": "5fc101394172901f50fcbfd9"
+  },
+  "id": "9990f4f2-8f04-4573-afde-9c0b5dbdb2b7",
+  "title": "new title",
+  "body": "new body",
+  "author": "b6381357-ebdc-4088-9d41-952087ee23c2",
+  "__v": 0
+}]

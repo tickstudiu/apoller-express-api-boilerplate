@@ -1,0 +1,41 @@
+[{
+  "_id": {
+    "$oid": "5fc10c130c29ac15e416f534"
+  },
+  "id": "b25b54b2-d3d6-458f-82a2-5ebb0cda7b01",
+  "title": "my title comment",
+  "body": "my body comment",
+  "postId": "9990f4f2-8f04-4573-afde-9c0b5dbdb2b7",
+  "author": "b6381357-ebdc-4088-9d41-952087ee23c2",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc10c350c29ac15e416f535"
+  },
+  "id": "774608ac-e514-450d-903d-8af1896215d0",
+  "title": "my title comment",
+  "body": "my body comment",
+  "postId": "9990f4f2-8f04-4573-afde-9c0b5dbdb2b7",
+  "author": "b6381357-ebdc-4088-9d41-952087ee23c2",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc10c350c29ac15e416f536"
+  },
+  "id": "ff24d2a9-8daf-4fc5-8ae2-f082cdb43997",
+  "title": "my title comment",
+  "body": "my body comment",
+  "postId": "9990f4f2-8f04-4573-afde-9c0b5dbdb2b7",
+  "author": "b6381357-ebdc-4088-9d41-952087ee23c2",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc10c360c29ac15e416f537"
+  },
+  "id": "37df30a1-c466-4b75-b8da-cefd5039787d",
+  "title": "my title comment",
+  "body": "my body comment",
+  "postId": "9990f4f2-8f04-4573-afde-9c0b5dbdb2b7",
+  "author": "b6381357-ebdc-4088-9d41-952087ee23c2",
+  "__v": 0
+}]
